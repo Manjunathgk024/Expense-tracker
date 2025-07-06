@@ -1,8 +1,36 @@
-# Expense Tracker (Flask)
+# 💰 Personal Expense Tracker with Analytics
 
-A Python Flask-based app to track and analyze personal expenses with real-time charts.
+A simple web-based personal expense tracker built using **Flask**, **SQLite**, and **Chart.js** to help users track and visualize their spending.
 
-## Features
-- Add and delete expenses
-- Store data using SQLite
-- Visualize data with Chart.js
+---
+
+## 🚀 Features
+
+- Add new expenses with category, amount, and note
+- Automatically stores data in SQLite
+- Delete expenses anytime
+- Visual summary with **pie chart** using Chart.js
+- Clean and responsive user interface
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend**: Python, Flask  
+- **Database**: SQLite  
+- **Frontend**: HTML, CSS, Chart.js  
+
+---
+
+## 📸 Screenshots
+
+> *(You can add screenshots here later)*
+
+---
+
+## 🧪 How to Run Locally
+
+1. Clone the repository  
+2. Install Flask  
+   ```bash
+   pip install flask
