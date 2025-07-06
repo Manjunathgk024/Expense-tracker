@@ -22,12 +22,6 @@ A simple web-based personal expense tracker built using **Flask**, **SQLite**, a
 
 ---
 
-## 📸 Screenshots
-
-> *(You can add screenshots here later)*
-
----
-
 ## 🧪 How to Run Locally
 
 1. Clone the repository  
