@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>Expense Tracker</h2>
+    <form action="/add" method="post">
+        <input type="number" name="amount" placeholder="Amount" required>
+        <input type="text" name="category" placeholder="Category" required>
+        <input type="date" name="date" required>
+        <input type="text" name="note" placeholder="Note">
+        <button type="submit">Add Expense</button>
+    </form>
+    <h3>All Expenses</h3>
+    <ul>
+        {% for expense in expenses %}
+        <li>{{ expense[3] }} - ₹{{ expense[1] }} ({{ expense[2] }})
+            <a href="/delete/{{ expense[0] }}">❌</a></li>
+        {% endfor %}
+    </ul>
+    <h3>Category Summary</h3>
+    <canvas id="summaryChart" width="400" height="200"></canvas>
+    <script>
+        const ctx = document.getElementById('summaryChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: {{ summary|map(attribute=0)|list }},
+                datasets: [{
+                    label: 'Expenses by Category',
+                    data: {{ summary|map(attribute=1)|list }},
+                    backgroundColor: ['red', 'blue', 'green', 'orange', 'purple']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
